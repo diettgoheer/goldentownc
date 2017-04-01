@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "person",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthday",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "temperature",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "credit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "HostType",
+            "fieldValues": "ENTERPRISE,PERSON,TEAM"
+        }
+    ],
+    "changelogDate": "20161225062708",
+    "entityTableName": "host",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "manager"
+}

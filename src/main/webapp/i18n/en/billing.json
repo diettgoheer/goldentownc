@@ -1,0 +1,27 @@
+{
+    "goldentown2App": {
+        "billing" : {
+            "home": {
+                "title": "Billings",
+                "createLabel": "Create a new Billing",
+                "createOrEditLabel": "Create or edit a Billing",
+                "search": "Search for Billing"
+            },
+            "created": "A new Billing is created with identifier {{ param }}",
+            "updated": "A Billing is updated with identifier {{ param }}",
+            "deleted": "A Billing is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Billing {{ id }}?"
+            },
+            "detail": {
+                "title": "Billing"
+            },
+            "price": "Price",
+            "time": "Time",
+            "deal": "Deal",
+            "user": "User",
+            "src": "Src",
+            "product": "Product"
+        }
+    }
+}

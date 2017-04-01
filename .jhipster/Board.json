@@ -1,0 +1,165 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "productionDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "purchaseTime",
+            "fieldType": "ZonedDateTime"
+        },
+		        {
+            "fieldName": "productionPlace",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "purchasePlace",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "provider",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "process",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "time",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "place",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "surrounding",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "teaPerson",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "drinkingPerson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mood",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "teaSet",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "teaPic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "packagePic",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "storageMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shape",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "aroma",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "hotAroma",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "teaWash",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "boilingAroma",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "cupAroma",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstBrewPic",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "firstBrewingSoup",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "firstBrewAroma",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstBrewMood",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "secondBrewPic",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "secondBrewSoup",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "secondBrewAroma",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "secondBrewMood",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "thirdBrewPic",
+            "fieldType": "String"
+        },
+		        {
+            "fieldName": "thirdBrewSoup",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thirdBrewAroma",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "thirdBrewMood",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "brewTimes",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "comment",
+            "fieldType": "String"
+        }
+		
+    ],
+    "changelogDate": "20170213060752",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "board",
+    "pagination": "infinite-scroll",
+	"angularJSSuffix": "manager"
+}

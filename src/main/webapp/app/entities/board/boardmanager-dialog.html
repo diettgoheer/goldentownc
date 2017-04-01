@@ -1,0 +1,266 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myBoardLabel" data-translate="goldentown2App.board.home.createOrEditLabel">Create or edit a Board</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.board.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.board.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.board.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.board.type"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.productionDate" for="field_productionDate">Production Date</label>
+                <div class="input-group">
+                    <input id="field_productionDate" type="text" class="form-control" name="productionDate" datetime-picker="{{dateformat}}" ng-model="vm.board.productionDate" is-open="vm.datePickerOpenStatus.productionDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('productionDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.purchaseTime" for="field_purchaseTime">Purchase Time</label>
+                <div class="input-group">
+                    <input id="field_purchaseTime" type="text" class="form-control" name="purchaseTime" datetime-picker="{{dateformat}}" ng-model="vm.board.purchaseTime" is-open="vm.datePickerOpenStatus.purchaseTime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('purchaseTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.productionPlace" for="field_productionPlace">Production Place</label>
+            <input type="text" class="form-control" name="productionPlace" id="field_productionPlace"
+                    ng-model="vm.board.productionPlace"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.purchasePlace" for="field_purchasePlace">Purchase Place</label>
+            <input type="text" class="form-control" name="purchasePlace" id="field_purchasePlace"
+                    ng-model="vm.board.purchasePlace"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.provider" for="field_provider">Provider</label>
+            <input type="text" class="form-control" name="provider" id="field_provider"
+                    ng-model="vm.board.provider"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.process" for="field_process">Process</label>
+            <input type="text" class="form-control" name="process" id="field_process"
+                    ng-model="vm.board.process"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.time" for="field_time">Time</label>
+                <div class="input-group">
+                    <input id="field_time" type="text" class="form-control" name="time" datetime-picker="{{dateformat}}" ng-model="vm.board.time" is-open="vm.datePickerOpenStatus.time"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('time')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.place" for="field_place">Place</label>
+            <input type="text" class="form-control" name="place" id="field_place"
+                    ng-model="vm.board.place"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.surrounding" for="field_surrounding">Surrounding</label>
+            <input type="text" class="form-control" name="surrounding" id="field_surrounding"
+                    ng-model="vm.board.surrounding"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.teaPerson" for="field_teaPerson">Tea Person</label>
+            <input type="text" class="form-control" name="teaPerson" id="field_teaPerson"
+                    ng-model="vm.board.teaPerson"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.drinkingPerson" for="field_drinkingPerson">Drinking Person</label>
+            <input type="text" class="form-control" name="drinkingPerson" id="field_drinkingPerson"
+                    ng-model="vm.board.drinkingPerson"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.mood" for="field_mood">Mood</label>
+            <input type="text" class="form-control" name="mood" id="field_mood"
+                    ng-model="vm.board.mood"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.teaSet" for="field_teaSet">Tea Set</label>
+            <input type="text" class="form-control" name="teaSet" id="field_teaSet"
+                    ng-model="vm.board.teaSet"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.teaPic" for="field_teaPic">Tea Pic</label>
+            <input type="text" class="form-control" name="teaPic" id="field_teaPic"
+                    ng-model="vm.board.teaPic"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.packagePic" for="field_packagePic">Package Pic</label>
+            <input type="text" class="form-control" name="packagePic" id="field_packagePic"
+                    ng-model="vm.board.packagePic"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.storageMethod" for="field_storageMethod">Storage Method</label>
+            <input type="text" class="form-control" name="storageMethod" id="field_storageMethod"
+                    ng-model="vm.board.storageMethod"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.shape" for="field_shape">Shape</label>
+            <input type="text" class="form-control" name="shape" id="field_shape"
+                    ng-model="vm.board.shape"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.aroma" for="field_aroma">Aroma</label>
+            <input type="text" class="form-control" name="aroma" id="field_aroma"
+                    ng-model="vm.board.aroma"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.hotAroma" for="field_hotAroma">Hot Aroma</label>
+            <input type="text" class="form-control" name="hotAroma" id="field_hotAroma"
+                    ng-model="vm.board.hotAroma"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.teaWash" for="field_teaWash">Tea Wash</label>
+            <input type="text" class="form-control" name="teaWash" id="field_teaWash"
+                    ng-model="vm.board.teaWash"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.boilingAroma" for="field_boilingAroma">Boiling Aroma</label>
+            <input type="text" class="form-control" name="boilingAroma" id="field_boilingAroma"
+                    ng-model="vm.board.boilingAroma"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.cupAroma" for="field_cupAroma">Cup Aroma</label>
+            <input type="text" class="form-control" name="cupAroma" id="field_cupAroma"
+                    ng-model="vm.board.cupAroma"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.firstBrewPic" for="field_firstBrewPic">First Brew Pic</label>
+            <input type="text" class="form-control" name="firstBrewPic" id="field_firstBrewPic"
+                    ng-model="vm.board.firstBrewPic"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.firstBrewingSoup" for="field_firstBrewingSoup">First Brewing Soup</label>
+            <input type="text" class="form-control" name="firstBrewingSoup" id="field_firstBrewingSoup"
+                    ng-model="vm.board.firstBrewingSoup"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.firstBrewAroma" for="field_firstBrewAroma">First Brew Aroma</label>
+            <input type="text" class="form-control" name="firstBrewAroma" id="field_firstBrewAroma"
+                    ng-model="vm.board.firstBrewAroma"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.firstBrewMood" for="field_firstBrewMood">First Brew Mood</label>
+            <input type="text" class="form-control" name="firstBrewMood" id="field_firstBrewMood"
+                    ng-model="vm.board.firstBrewMood"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.secondBrewPic" for="field_secondBrewPic">Second Brew Pic</label>
+            <input type="text" class="form-control" name="secondBrewPic" id="field_secondBrewPic"
+                    ng-model="vm.board.secondBrewPic"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.secondBrewSoup" for="field_secondBrewSoup">Second Brew Soup</label>
+            <input type="text" class="form-control" name="secondBrewSoup" id="field_secondBrewSoup"
+                    ng-model="vm.board.secondBrewSoup"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.secondBrewAroma" for="field_secondBrewAroma">Second Brew Aroma</label>
+            <input type="text" class="form-control" name="secondBrewAroma" id="field_secondBrewAroma"
+                    ng-model="vm.board.secondBrewAroma"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.secondBrewMood" for="field_secondBrewMood">Second Brew Mood</label>
+            <input type="text" class="form-control" name="secondBrewMood" id="field_secondBrewMood"
+                    ng-model="vm.board.secondBrewMood"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.thirdBrewPic" for="field_thirdBrewPic">Third Brew Pic</label>
+            <input type="text" class="form-control" name="thirdBrewPic" id="field_thirdBrewPic"
+                    ng-model="vm.board.thirdBrewPic"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.thirdBrewSoup" for="field_thirdBrewSoup">Third Brew Soup</label>
+            <input type="text" class="form-control" name="thirdBrewSoup" id="field_thirdBrewSoup"
+                    ng-model="vm.board.thirdBrewSoup"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.thirdBrewAroma" for="field_thirdBrewAroma">Third Brew Aroma</label>
+            <input type="text" class="form-control" name="thirdBrewAroma" id="field_thirdBrewAroma"
+                    ng-model="vm.board.thirdBrewAroma"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.thirdBrewMood" for="field_thirdBrewMood">Third Brew Mood</label>
+            <input type="text" class="form-control" name="thirdBrewMood" id="field_thirdBrewMood"
+                    ng-model="vm.board.thirdBrewMood"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.brewTimes" for="field_brewTimes">Brew Times</label>
+            <input type="text" class="form-control" name="brewTimes" id="field_brewTimes"
+                    ng-model="vm.board.brewTimes"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.board.comment" for="field_comment">Comment</label>
+            <input type="text" class="form-control" name="comment" id="field_comment"
+                    ng-model="vm.board.comment"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

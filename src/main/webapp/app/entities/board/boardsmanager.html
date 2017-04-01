@@ -1,0 +1,147 @@
+<div>
+    <h2 data-translate="goldentown2App.board.home.title">Boards</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="boardmanager.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="goldentown2App.board.home.createLabel">
+                        Create new Board
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'goldentown2App.board.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="goldentown2App.board.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span data-translate="goldentown2App.board.type">Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="productionDate"><span data-translate="goldentown2App.board.productionDate">Production Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="purchaseTime"><span data-translate="goldentown2App.board.purchaseTime">Purchase Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="productionPlace"><span data-translate="goldentown2App.board.productionPlace">Production Place</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="purchasePlace"><span data-translate="goldentown2App.board.purchasePlace">Purchase Place</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="provider"><span data-translate="goldentown2App.board.provider">Provider</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="process"><span data-translate="goldentown2App.board.process">Process</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="time"><span data-translate="goldentown2App.board.time">Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="place"><span data-translate="goldentown2App.board.place">Place</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="surrounding"><span data-translate="goldentown2App.board.surrounding">Surrounding</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="teaPerson"><span data-translate="goldentown2App.board.teaPerson">Tea Person</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="drinkingPerson"><span data-translate="goldentown2App.board.drinkingPerson">Drinking Person</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mood"><span data-translate="goldentown2App.board.mood">Mood</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="teaSet"><span data-translate="goldentown2App.board.teaSet">Tea Set</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="teaPic"><span data-translate="goldentown2App.board.teaPic">Tea Pic</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="packagePic"><span data-translate="goldentown2App.board.packagePic">Package Pic</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="storageMethod"><span data-translate="goldentown2App.board.storageMethod">Storage Method</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="shape"><span data-translate="goldentown2App.board.shape">Shape</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="aroma"><span data-translate="goldentown2App.board.aroma">Aroma</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="hotAroma"><span data-translate="goldentown2App.board.hotAroma">Hot Aroma</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="teaWash"><span data-translate="goldentown2App.board.teaWash">Tea Wash</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="boilingAroma"><span data-translate="goldentown2App.board.boilingAroma">Boiling Aroma</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cupAroma"><span data-translate="goldentown2App.board.cupAroma">Cup Aroma</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="firstBrewPic"><span data-translate="goldentown2App.board.firstBrewPic">First Brew Pic</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="firstBrewingSoup"><span data-translate="goldentown2App.board.firstBrewingSoup">First Brewing Soup</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="firstBrewAroma"><span data-translate="goldentown2App.board.firstBrewAroma">First Brew Aroma</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="firstBrewMood"><span data-translate="goldentown2App.board.firstBrewMood">First Brew Mood</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="secondBrewPic"><span data-translate="goldentown2App.board.secondBrewPic">Second Brew Pic</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="secondBrewSoup"><span data-translate="goldentown2App.board.secondBrewSoup">Second Brew Soup</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="secondBrewAroma"><span data-translate="goldentown2App.board.secondBrewAroma">Second Brew Aroma</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="secondBrewMood"><span data-translate="goldentown2App.board.secondBrewMood">Second Brew Mood</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="thirdBrewPic"><span data-translate="goldentown2App.board.thirdBrewPic">Third Brew Pic</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="thirdBrewSoup"><span data-translate="goldentown2App.board.thirdBrewSoup">Third Brew Soup</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="thirdBrewAroma"><span data-translate="goldentown2App.board.thirdBrewAroma">Third Brew Aroma</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="thirdBrewMood"><span data-translate="goldentown2App.board.thirdBrewMood">Third Brew Mood</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="brewTimes"><span data-translate="goldentown2App.board.brewTimes">Brew Times</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="comment"><span data-translate="goldentown2App.board.comment">Comment</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="board in vm.boards track by board.id">
+                    <td><a ui-sref="boardmanager-detail({id:board.id})">{{board.id}}</a></td>
+                    <td>{{board.name}}</td>
+                    <td>{{board.type}}</td>
+                    <td>{{board.productionDate | date:'medium'}}</td>
+                    <td>{{board.purchaseTime | date:'medium'}}</td>
+                    <td>{{board.productionPlace}}</td>
+                    <td>{{board.purchasePlace}}</td>
+                    <td>{{board.provider}}</td>
+                    <td>{{board.process}}</td>
+                    <td>{{board.time | date:'medium'}}</td>
+                    <td>{{board.place}}</td>
+                    <td>{{board.surrounding}}</td>
+                    <td>{{board.teaPerson}}</td>
+                    <td>{{board.drinkingPerson}}</td>
+                    <td>{{board.mood}}</td>
+                    <td>{{board.teaSet}}</td>
+                    <td>{{board.teaPic}}</td>
+                    <td>{{board.packagePic}}</td>
+                    <td>{{board.storageMethod}}</td>
+                    <td>{{board.shape}}</td>
+                    <td>{{board.aroma}}</td>
+                    <td>{{board.hotAroma}}</td>
+                    <td>{{board.teaWash}}</td>
+                    <td>{{board.boilingAroma}}</td>
+                    <td>{{board.cupAroma}}</td>
+                    <td>{{board.firstBrewPic}}</td>
+                    <td>{{board.firstBrewingSoup}}</td>
+                    <td>{{board.firstBrewAroma}}</td>
+                    <td>{{board.firstBrewMood}}</td>
+                    <td>{{board.secondBrewPic}}</td>
+                    <td>{{board.secondBrewSoup}}</td>
+                    <td>{{board.secondBrewAroma}}</td>
+                    <td>{{board.secondBrewMood}}</td>
+                    <td>{{board.thirdBrewPic}}</td>
+                    <td>{{board.thirdBrewSoup}}</td>
+                    <td>{{board.thirdBrewAroma}}</td>
+                    <td>{{board.thirdBrewMood}}</td>
+                    <td>{{board.brewTimes}}</td>
+                    <td>{{board.comment}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="boardmanager-detail({id:board.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="boardmanager.edit({id:board.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="boardmanager.delete({id:board.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

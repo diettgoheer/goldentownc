@@ -1,0 +1,10 @@
+{
+    "goldentown2App": {
+        "HostType" : {
+            "null": "",
+            "ENTERPRISE": "ENTERPRISE",
+            "PERSON": "PERSON",
+            "TEAM": "TEAM"
+        }
+    }
+}

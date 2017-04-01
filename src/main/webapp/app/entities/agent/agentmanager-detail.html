@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="goldentown2App.agent.detail.title">Agent</span> {{vm.agent.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="goldentown2App.agent.product">Product</span></dt>
+        <dd>
+            <a ui-sref="productmanager-detail({id:vm.agent.productId})">{{vm.agent.productId}}</a>
+        </dd>
+        <dt><span data-translate="goldentown2App.agent.user">User</span></dt>
+        <dd>
+            {{vm.agent.userId}}
+        </dd>
+        <dt><span data-translate="goldentown2App.agent.father">Father</span></dt>
+        <dd>
+            <a ui-sref="agentmanager-detail({id:vm.agent.fatherId})">{{vm.agent.fatherId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="agentmanager-detail.edit({id:vm.agent.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

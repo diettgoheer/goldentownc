@@ -1,0 +1,26 @@
+{
+    "goldentown2App": {
+        "deal" : {
+            "home": {
+                "title": "Deals",
+                "createLabel": "Create a new Deal",
+                "createOrEditLabel": "Create or edit a Deal",
+                "search": "Search for Deal"
+            },
+            "created": "A new Deal is created with identifier {{ param }}",
+            "updated": "A Deal is updated with identifier {{ param }}",
+            "deleted": "A Deal is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Deal {{ id }}?"
+            },
+            "detail": {
+                "title": "Deal"
+            },
+            "time": "Time",
+            "price": "Price",
+            "user": "User",
+            "agent": "Agent",
+            "product": "Product"
+        }
+    }
+}
