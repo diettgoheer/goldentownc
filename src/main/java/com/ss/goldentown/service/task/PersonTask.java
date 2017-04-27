@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.boot.autoconfigure.jms.artemis.ArtemisNoOpBindingRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -24,15 +25,15 @@ import com.ss.goldentown.service.WorldService;
 @EnableScheduling
 public class PersonTask {
 	private double worldValue = 10000;
-	private double wholeWorldValue = 1000000;
+	private double wholeWorldValue = 100000;
 	
 	private double oneAge = 30;
-	private final double baseWorldValue = 5000;
-	private final double midAge =15;
+	private double baseWorldValue = 5000;
+	private double midAge =15;
 	private double baseValue = 1;
-	private final double growRate = 1.05;
-	private final double legacyRate = 0.382;
-	private final double breedRate = 0.1;
+	private double growRate = 1.03;
+	private double legacyRate = 0.382;
+	private double breedRate = 0.1;
 	private double mValue = 0;
 	private List<Person> gPersons;
 /*	private List<Person> newPersons;*/
@@ -62,27 +63,24 @@ public class PersonTask {
 				//personService.batchDeleteAll();
 				personService.batchUpdate(gPersons);
 			}
+			if(gPersons!=null&&gPersons.size()!=0)
 			setWorld(gPersons);
 			gPersons = personService.findAll();
 		}
 		g++;
 		
 		if(gPersons.size()==0){
-			Person son = new Person();
-			son.setSurname(NameService.getSurname("轩辕"));
-			son.setName(NameService.getFixedLengthChinese(son.getSurname(), 3));
-		    son.setAge((double) 0);
-		    son.setBirthday(ZonedDateTime.now());
-		    son.setValue(baseValue);
-		    son.setLastValue(son.getValue());
-		    son.setGeneration((double)0);
-		    gPersons.add(son);
-		    personService.save(son);
+			
+			init();
+			
 		}
+		
 		boolean forgetten = true;
 		/*long bid = gPersons.get(gPersons.size()-1).getId();
 		int did = 0;*/
 		double gp  = getGP(gPersons);
+		if(gPersons.size()>20000||g==3000)
+			gp=1;
 		for(int i = 0;i<gPersons.size();i++){
 			Person person =gPersons.get(i);
 			if(gPersons.get(i).isIsDead()==null||gPersons.get(i).isIsDead()==false){
@@ -93,9 +91,27 @@ public class PersonTask {
 					growPerson(gp,person);
 				}
 				else{
-					if(person.getValue()>500&&Math.random()>0.8){
+					
+					if(person.getValue()>5&&Math.random()>0.8){
+						person.setValue(person.getValue()*0.8-1);
+						growPerson(gp,person);
+					}
+					else if(person.getValue()>50&&Math.random()>0.8){
+						person.setValue(person.getValue()*0.8-10);
+						growPerson(gp,person);
+					}
+					else if(person.getValue()>500&&Math.random()>0.8){
 						person.setValue(person.getValue()*0.8-100);
 						growPerson(gp,person);
+					}
+					else if(person.getValue()>5000&&Math.random()>0.8){
+						person.setValue(person.getValue()*0.8-1000);
+						growPerson(gp,person);
+					}
+					else if(person.getValue()>50000&&Math.random()>0.8){
+						person.setValue(person.getValue()*0.8-10000);
+						growPerson(gp,person);
+						
 					}
 					else{
 						person.setIsDead(true);
@@ -116,8 +132,31 @@ public class PersonTask {
 		log.debug("Grow End");
 	}
 	
+	private void init(){
+		g=0;
+		Person son = new Person();
+		son.setSurname(NameService.getSurname("轩辕"));
+		son.setName(NameService.getFixedLengthChinese(son.getSurname(), 3));
+	    son.setAge((double) 0);
+	    son.setBirthday(ZonedDateTime.now());
+	    son.setValue(baseValue);
+	    son.setLastValue(son.getValue());
+	    son.setGeneration((double)0);
+	    gPersons.add(son);
+	    personService.save(son);
+
+	    worldValue = Math.random()*10000+5000;		
+		oneAge = Math.random()*12+24;
+		baseWorldValue = Math.random()*2000+4000;
+		midAge =oneAge/2;
+		baseValue = Math.random()*4+2;
+		growRate = 1+0.03*Math.random()+0.005;
+		legacyRate = 0.2+0.2*Math.random();
+		breedRate = 0.05+0.1*Math.random();
+	}
+	
 	private void growPerson(double gp,Person person){		
-			person.setValue(person.getValue()*growRate);
+			person.setValue(person.getValue()*(growRate-0.04+0.1*Math.random()));
 			person.setAge(person.getAge()+1);
 			double bp = getBP(person);
 			if(Math.random()<bp){
@@ -144,7 +183,7 @@ public class PersonTask {
 			if(gPersons.get(i).isIsDead()==null||gPersons.get(i).isIsDead()==false)
 			mValue = gPersons.get(i).getValue()+mValue;
 		}
-		gp = Math.log(mValue)/Math.log(worldValue)-1;
+		gp = (Math.log(mValue)/Math.log(worldValue)-1)/2;
 		gp = Math.min(gp, legacyRate);
 		if(gp>0)
 		    return gp;
@@ -154,7 +193,7 @@ public class PersonTask {
 	
 	public double getPP(Person person){
 		double pp = 0;
-		pp = (Math.log(person.getAge())/Math.log(oneAge) -1)/1.5;
+		pp = (Math.log(person.getAge())/Math.log(oneAge) -1)/2;
 		if(pp>0)
 		    return pp;
 		else
@@ -163,7 +202,7 @@ public class PersonTask {
 	
 	public double getBP(Person person){
 		double p = 0;
-		p = (Math.log(person.getAge())/Math.log(midAge) -1)/2;
+		p = (Math.log(person.getAge())/Math.log(midAge) -1)/3;
 		if(person.getAge()>oneAge)
 			p=p*oneAge/person.getAge();
 		if(p>0)
@@ -231,10 +270,12 @@ public class PersonTask {
 		world.setMaxAge(maxAge);
 		world.setMaxValue(maxValue);
 		world.setWorldValue(worldValue); 
-		worldValue = Math.min((Math.random()+0.3)*worldValue+mValue*breedRate+baseWorldValue,wholeWorldValue);
+		worldValue = Math.min((Math.random()/2+0.5375)*worldValue+mValue*breedRate+baseWorldValue,wholeWorldValue);
+		wholeWorldValue = wholeWorldValue*growRate;
 		world.setWorldAge(oneAge); 
 		world.setMidAge(midAge); 
 		world.setBaseValue(baseValue); 
+		baseValue = baseValue+0.1;
 		/*if(averageValue/3>baseValue)
 			baseValue = averageValue/3;*/
 		world.setGrowRate(growRate);

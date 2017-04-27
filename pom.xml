@@ -11,7 +11,7 @@
 
     <groupId>com.ss.goldentown</groupId>
     <artifactId>goldentown-2</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Goldentown 2</name>
 

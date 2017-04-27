@@ -33,7 +33,7 @@ public class NameService {
 	}
 	
 	public static String getSurname(String surname){
-		double n = 0.2;
+		double n = 0.1;
 		String str;
 		if(Math.random()>n)
 			str = surname;
