@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "father",
+            "otherEntityName": "cemetery",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "person"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "person",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "generation",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "Double"
+        },
+		{
+			"fieldName": "lastValue",
+            "fieldType": "Double"
+		},
+		{
+			"fieldName": "birthday",
+            "fieldType": "ZonedDateTime"
+		},
+		{
+			"fieldName": "deathday",
+            "fieldType": "ZonedDateTime"
+		},
+        {
+            "fieldName": "isDead",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170424055334",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "cemetery",
+    "pagination": "no"
+}

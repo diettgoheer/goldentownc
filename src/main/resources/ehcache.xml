@@ -34,5 +34,11 @@
 
     <cache alias="com.ss.goldentown.domain.Board" uses-template="simple"/>
 
+    <cache alias="com.ss.goldentown.domain.Person" uses-template="simple"/>
+
+    <cache alias="com.ss.goldentown.domain.World" uses-template="simple"/>
+
+    <cache alias="com.ss.goldentown.domain.Cemetery" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

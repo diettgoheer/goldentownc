@@ -1,0 +1,103 @@
+<div>
+    <h2 data-translate="goldentown2App.world.home.title">Worlds</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="world.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="goldentown2App.world.home.createLabel">
+                        Create new World
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'goldentown2App.world.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="goldentown2App.world.time">Time</span></th>
+                    <th><span data-translate="goldentown2App.world.personCount">Person Count</span></th>
+                    <th><span data-translate="goldentown2App.world.birthCount">Birth Count</span></th>
+                    <th><span data-translate="goldentown2App.world.deathCount">Death Count</span></th>
+                    <th><span data-translate="goldentown2App.world.maxGeneration">Max Generation</span></th>
+                    <th><span data-translate="goldentown2App.world.averageValue">Average Value</span></th>
+                    <th><span data-translate="goldentown2App.world.averageAge">Average Age</span></th>
+                    <th><span data-translate="goldentown2App.world.maxValue">Max Value</span></th>
+                    <th><span data-translate="goldentown2App.world.maxAge">Max Age</span></th>
+                    <th><span data-translate="goldentown2App.world.worldValue">World Value</span></th>
+                    <th><span data-translate="goldentown2App.world.worldAge">World Age</span></th>
+                    <th><span data-translate="goldentown2App.world.midAge">Mid Age</span></th>
+                    <th><span data-translate="goldentown2App.world.baseValue">Base Value</span></th>
+                    <th><span data-translate="goldentown2App.world.growRate">Grow Rate</span></th>
+                    <th><span data-translate="goldentown2App.world.legacyRate">Legacy Rate</span></th>
+                    <th><span data-translate="goldentown2App.world.breedRate">Breed Rate</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="world in vm.worlds track by world.id">
+                    <td><a ui-sref="world-detail({id:world.id})">{{world.id}}</a></td>
+                    <td>{{world.time | date:'medium'}}</td>
+                    <td>{{world.personCount}}</td>
+                    <td>{{world.birthCount}}</td>
+                    <td>{{world.deathCount}}</td>
+                    <td>{{world.maxGeneration}}</td>
+                    <td>{{world.averageValue}}</td>
+                    <td>{{world.averageAge}}</td>
+                    <td>{{world.maxValue}}</td>
+                    <td>{{world.maxAge}}</td>
+                    <td>{{world.worldValue}}</td>
+                    <td>{{world.worldAge}}</td>
+                    <td>{{world.midAge}}</td>
+                    <td>{{world.baseValue}}</td>
+                    <td>{{world.growRate}}</td>
+                    <td>{{world.legacyRate}}</td>
+                    <td>{{world.breedRate}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="world-detail({id:world.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="world.edit({id:world.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="world.delete({id:world.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

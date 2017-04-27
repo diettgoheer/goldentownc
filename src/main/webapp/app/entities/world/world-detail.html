@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span data-translate="goldentown2App.world.detail.title">World</span> {{vm.world.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="goldentown2App.world.time">Time</span></dt>
+        <dd>
+            <span>{{vm.world.time | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.personCount">Person Count</span></dt>
+        <dd>
+            <span>{{vm.world.personCount}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.birthCount">Birth Count</span></dt>
+        <dd>
+            <span>{{vm.world.birthCount}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.deathCount">Death Count</span></dt>
+        <dd>
+            <span>{{vm.world.deathCount}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.maxGeneration">Max Generation</span></dt>
+        <dd>
+            <span>{{vm.world.maxGeneration}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.averageValue">Average Value</span></dt>
+        <dd>
+            <span>{{vm.world.averageValue}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.averageAge">Average Age</span></dt>
+        <dd>
+            <span>{{vm.world.averageAge}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.maxValue">Max Value</span></dt>
+        <dd>
+            <span>{{vm.world.maxValue}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.maxAge">Max Age</span></dt>
+        <dd>
+            <span>{{vm.world.maxAge}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.worldValue">World Value</span></dt>
+        <dd>
+            <span>{{vm.world.worldValue}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.worldAge">World Age</span></dt>
+        <dd>
+            <span>{{vm.world.worldAge}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.midAge">Mid Age</span></dt>
+        <dd>
+            <span>{{vm.world.midAge}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.baseValue">Base Value</span></dt>
+        <dd>
+            <span>{{vm.world.baseValue}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.growRate">Grow Rate</span></dt>
+        <dd>
+            <span>{{vm.world.growRate}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.legacyRate">Legacy Rate</span></dt>
+        <dd>
+            <span>{{vm.world.legacyRate}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.world.breedRate">Breed Rate</span></dt>
+        <dd>
+            <span>{{vm.world.breedRate}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="world-detail.edit({id:vm.world.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

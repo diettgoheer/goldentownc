@@ -24,10 +24,14 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/goldentown2?useUnicode=true&characterEncoding=utf8&useSSL=false
+#        url: jdbc:mysql://localhost:3306/goldentown2?useUnicode=true&characterEncoding=utf8&useSSL=false
+#        name:
+#        username: root
+#        password:
+        url: jdbc:mysql://10.4.247.71:3307/ideal_test?useUnicode=true&characterEncoding=utf8&useSSL=false
         name:
         username: root
-        password:
+        password: szyl_root
         hikari:
             data-source-properties:
                 cachePrepStmts: true

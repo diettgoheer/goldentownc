@@ -1,0 +1,37 @@
+{
+    "goldentown2App": {
+        "world" : {
+            "home": {
+                "title": "Worlds",
+                "createLabel": "Create a new World",
+                "createOrEditLabel": "Create or edit a World",
+                "search": "Search for World"
+            },
+            "created": "A new World is created with identifier {{ param }}",
+            "updated": "A World is updated with identifier {{ param }}",
+            "deleted": "A World is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete World {{ id }}?"
+            },
+            "detail": {
+                "title": "World"
+            },
+            "time": "Time",
+            "personCount": "Person Count",
+            "birthCount": "Birth Count",
+            "deathCount": "Death Count",
+            "maxGeneration": "Max Generation",
+            "averageValue": "Average Value",
+            "averageAge": "Average Age",
+            "maxValue": "Max Value",
+            "maxAge": "Max Age",
+            "worldValue": "World Value",
+            "worldAge": "World Age",
+            "midAge": "Mid Age",
+            "baseValue": "Base Value",
+            "growRate": "Grow Rate",
+            "legacyRate": "Legacy Rate",
+            "breedRate": "Breed Rate"
+        }
+    }
+}

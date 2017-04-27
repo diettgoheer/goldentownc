@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+    ],
+    "fields": [
+        {
+            "fieldName": "person",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "surname",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "fatherName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "generation",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "Double"
+        },
+		{
+			"fieldName": "lastValue",
+            "fieldType": "Double"
+		},
+		{
+			"fieldName": "birthday",
+            "fieldType": "ZonedDateTime"
+		},
+		{
+			"fieldName": "deathday",
+            "fieldType": "ZonedDateTime"
+		},
+        {
+            "fieldName": "isDead",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170424055334",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "person",
+    "pagination": "no"
+}

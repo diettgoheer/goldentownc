@@ -1,0 +1,75 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "time",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "personCount",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "birthCount",
+            "fieldType": "Double"
+        },        
+		{
+            "fieldName": "deathCount",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "maxGeneration",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "averageValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "averageAge",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "maxValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "maxAge",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "worldValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "worldAge",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "midAge",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "baseValue",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "growRate",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "legacyRate",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "breedRate",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170425020209",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "world",
+    "pagination": "no"
+}

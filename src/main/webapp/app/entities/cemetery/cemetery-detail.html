@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="goldentown2App.cemetery.detail.title">Cemetery</span> {{vm.cemetery.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="goldentown2App.cemetery.person">Person</span></dt>
+        <dd>
+            <span>{{vm.cemetery.person}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.age">Age</span></dt>
+        <dd>
+            <span>{{vm.cemetery.age}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.generation">Generation</span></dt>
+        <dd>
+            <span>{{vm.cemetery.generation}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.value">Value</span></dt>
+        <dd>
+            <span>{{vm.cemetery.value}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.lastValue">Last Value</span></dt>
+        <dd>
+            <span>{{vm.cemetery.lastValue}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.birthday">Birthday</span></dt>
+        <dd>
+            <span>{{vm.cemetery.birthday | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.deathday">Deathday</span></dt>
+        <dd>
+            <span>{{vm.cemetery.deathday | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.isDead">Is Dead</span></dt>
+        <dd>
+            <span>{{vm.cemetery.isDead}}</span>
+        </dd>
+        <dt><span data-translate="goldentown2App.cemetery.father">Father</span></dt>
+        <dd>
+            <a ui-sref="cemetery-detail({id:vm.cemetery.father.id})">{{vm.cemetery.father.person}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="cemetery-detail.edit({id:vm.cemetery.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

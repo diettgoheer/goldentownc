@@ -1,0 +1,126 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myWorldLabel" data-translate="goldentown2App.world.home.createOrEditLabel">Create or edit a World</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.world.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.world.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.time" for="field_time">Time</label>
+                <div class="input-group">
+                    <input id="field_time" type="text" class="form-control" name="time" datetime-picker="{{dateformat}}" ng-model="vm.world.time" is-open="vm.datePickerOpenStatus.time"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('time')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.personCount" for="field_personCount">Person Count</label>
+            <input type="number" class="form-control" name="personCount" id="field_personCount"
+                    ng-model="vm.world.personCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.birthCount" for="field_birthCount">Birth Count</label>
+            <input type="number" class="form-control" name="birthCount" id="field_birthCount"
+                    ng-model="vm.world.birthCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.deathCount" for="field_deathCount">Death Count</label>
+            <input type="number" class="form-control" name="deathCount" id="field_deathCount"
+                    ng-model="vm.world.deathCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.maxGeneration" for="field_maxGeneration">Max Generation</label>
+            <input type="number" class="form-control" name="maxGeneration" id="field_maxGeneration"
+                    ng-model="vm.world.maxGeneration"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.averageValue" for="field_averageValue">Average Value</label>
+            <input type="number" class="form-control" name="averageValue" id="field_averageValue"
+                    ng-model="vm.world.averageValue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.averageAge" for="field_averageAge">Average Age</label>
+            <input type="number" class="form-control" name="averageAge" id="field_averageAge"
+                    ng-model="vm.world.averageAge"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.maxValue" for="field_maxValue">Max Value</label>
+            <input type="number" class="form-control" name="maxValue" id="field_maxValue"
+                    ng-model="vm.world.maxValue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.maxAge" for="field_maxAge">Max Age</label>
+            <input type="number" class="form-control" name="maxAge" id="field_maxAge"
+                    ng-model="vm.world.maxAge"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.worldValue" for="field_worldValue">World Value</label>
+            <input type="number" class="form-control" name="worldValue" id="field_worldValue"
+                    ng-model="vm.world.worldValue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.worldAge" for="field_worldAge">World Age</label>
+            <input type="number" class="form-control" name="worldAge" id="field_worldAge"
+                    ng-model="vm.world.worldAge"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.midAge" for="field_midAge">Mid Age</label>
+            <input type="number" class="form-control" name="midAge" id="field_midAge"
+                    ng-model="vm.world.midAge"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.baseValue" for="field_baseValue">Base Value</label>
+            <input type="number" class="form-control" name="baseValue" id="field_baseValue"
+                    ng-model="vm.world.baseValue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.growRate" for="field_growRate">Grow Rate</label>
+            <input type="number" class="form-control" name="growRate" id="field_growRate"
+                    ng-model="vm.world.growRate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.legacyRate" for="field_legacyRate">Legacy Rate</label>
+            <input type="number" class="form-control" name="legacyRate" id="field_legacyRate"
+                    ng-model="vm.world.legacyRate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="goldentown2App.world.breedRate" for="field_breedRate">Breed Rate</label>
+            <input type="number" class="form-control" name="breedRate" id="field_breedRate"
+                    ng-model="vm.world.breedRate"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

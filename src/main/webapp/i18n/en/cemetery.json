@@ -1,0 +1,30 @@
+{
+    "goldentown2App": {
+        "cemetery" : {
+            "home": {
+                "title": "Cemeteries",
+                "createLabel": "Create a new Cemetery",
+                "createOrEditLabel": "Create or edit a Cemetery",
+                "search": "Search for Cemetery"
+            },
+            "created": "A new Cemetery is created with identifier {{ param }}",
+            "updated": "A Cemetery is updated with identifier {{ param }}",
+            "deleted": "A Cemetery is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cemetery {{ id }}?"
+            },
+            "detail": {
+                "title": "Cemetery"
+            },
+            "person": "Person",
+            "age": "Age",
+            "generation": "Generation",
+            "value": "Value",
+            "lastValue": "Last Value",
+            "birthday": "Birthday",
+            "deathday": "Deathday",
+            "isDead": "Is Dead",
+            "father": "Father"
+        }
+    }
+}

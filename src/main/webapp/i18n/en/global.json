@@ -13,6 +13,9 @@
                 "dealmanager": "Deal",
                 "billingmanager": "Billing",
                 "boardmanager": "Board",
+                "person": "Person",
+                "world": "World",
+                "cemetery": "Cemetery",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
