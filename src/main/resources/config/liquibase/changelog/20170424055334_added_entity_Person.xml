@@ -40,7 +40,39 @@
                 <constraints nullable="true" />
             </column>
             
+            <column name="mother_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="gender" type="integer">
+                <constraints nullable="true" />
+            </column>
+            
             <column name="age" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="gene_1" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="gene_2" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="gene_3" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="gene_4" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="gene_5" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="gene_6" type="double">
                 <constraints nullable="true" />
             </column>
             

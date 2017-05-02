@@ -68,7 +68,7 @@ class PersonGatlingTest extends Simulation {
             .exec(http("Create new person")
             .post("/api/people")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "person":"SAMPLE_TEXT", "surname":"SAMPLE_TEXT", "name":"SAMPLE_TEXT", "fatherName":"SAMPLE_TEXT", "age":null, "generation":null, "value":null, "lastValue":null, "birthday":"2020-01-01T00:00:00.000Z", "deathday":"2020-01-01T00:00:00.000Z", "isDead":null}""")).asJSON
+            .body(StringBody("""{"id":null, "person":"SAMPLE_TEXT", "surname":"SAMPLE_TEXT", "name":"SAMPLE_TEXT", "fatherName":"SAMPLE_TEXT", "MotherName":"SAMPLE_TEXT", "gender":"0", "age":null, "gene1":null, "gene2":null, "gene3":null, "gene4":null, "gene5":null, "gene6":null, "generation":null, "value":null, "lastValue":null, "birthday":"2020-01-01T00:00:00.000Z", "deathday":"2020-01-01T00:00:00.000Z", "isDead":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_person_url"))).exitHereIfFailed
             .pause(10)

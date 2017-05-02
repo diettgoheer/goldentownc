@@ -26,12 +26,14 @@
             "maxValue": "Max Value",
             "maxAge": "Max Age",
             "worldValue": "World Value",
-            "worldAge": "World Age",
+            "oneAge": "One Age",
             "midAge": "Mid Age",
             "baseValue": "Base Value",
             "growRate": "Grow Rate",
             "legacyRate": "Legacy Rate",
-            "breedRate": "Breed Rate"
+            "breedRate": "Breed Rate",
+            "worldCount": "World Count",
+            "worldAge": "World Age"
         }
     }
 }

@@ -68,7 +68,7 @@ class WorldGatlingTest extends Simulation {
             .exec(http("Create new world")
             .post("/api/worlds")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "time":"2020-01-01T00:00:00.000Z", "personCount":null, "birthCount":null, "deathCount":null, "maxGeneration":null, "averageValue":null, "averageAge":null, "maxValue":null, "maxAge":null, "worldValue":null, "worldAge":null, "midAge":null, "baseValue":null, "growRate":null, "legacyRate":null, "breedRate":null}""")).asJSON
+            .body(StringBody("""{"id":null, "time":"2020-01-01T00:00:00.000Z", "personCount":null, "birthCount":null, "deathCount":null, "maxGeneration":null, "averageValue":null, "averageAge":null, "maxValue":null, "maxAge":null, "worldValue":null, "oneAge":null, "midAge":null, "baseValue":null, "growRate":null, "legacyRate":null, "breedRate":null, "worldCount":null, "worldAge":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_world_url"))).exitHereIfFailed
             .pause(10)

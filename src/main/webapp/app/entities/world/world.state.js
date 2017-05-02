@@ -114,12 +114,14 @@
                                 maxValue: null,
                                 maxAge: null,
                                 worldValue: null,
-                                worldAge: null,
+                                oneAge: null,
                                 midAge: null,
                                 baseValue: null,
                                 growRate: null,
                                 legacyRate: null,
                                 breedRate: null,
+                                worldCount: null,
+                                worldAge: null,
                                 id: null
                             };
                         }

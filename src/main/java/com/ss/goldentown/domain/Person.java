@@ -36,8 +36,32 @@ public class Person implements Serializable {
     @Column(name = "father_name")
     private String fatherName;
 
+    @Column(name = "mother_name")
+    private String motherName="";
+
+    @Column(name = "gender")
+    private Integer gender;
+
     @Column(name = "age")
     private Double age;
+
+    @Column(name = "gene_1")
+    private Double gene1;
+
+    @Column(name = "gene_2")
+    private Double gene2;
+
+    @Column(name = "gene_3")
+    private Double gene3;
+
+    @Column(name = "gene_4")
+    private Double gene4;
+
+    @Column(name = "gene_5")
+    private Double gene5;
+
+    @Column(name = "gene_6")
+    private Double gene6;
 
     @Column(name = "generation")
     private Double generation;
@@ -117,6 +141,32 @@ public class Person implements Serializable {
         this.fatherName = fatherName;
     }
 
+    public String getMotherName() {
+        return motherName;
+    }
+
+    public Person motherName(String motherName) {
+        this.motherName = motherName;
+        return this;
+    }
+
+    public void setMotherName(String motherName) {
+        this.motherName = motherName;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public Person gender(Integer gender) {
+        this.gender = gender;
+        return this;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
     public Double getAge() {
         return age;
     }
@@ -128,6 +178,84 @@ public class Person implements Serializable {
 
     public void setAge(Double age) {
         this.age = age;
+    }
+
+    public Double getGene1() {
+        return gene1;
+    }
+
+    public Person gene1(Double gene1) {
+        this.gene1 = gene1;
+        return this;
+    }
+
+    public void setGene1(Double gene1) {
+        this.gene1 = gene1;
+    }
+
+    public Double getGene2() {
+        return gene2;
+    }
+
+    public Person gene2(Double gene2) {
+        this.gene2 = gene2;
+        return this;
+    }
+
+    public void setGene2(Double gene2) {
+        this.gene2 = gene2;
+    }
+
+    public Double getGene3() {
+        return gene3;
+    }
+
+    public Person gene3(Double gene3) {
+        this.gene3 = gene3;
+        return this;
+    }
+
+    public void setGene3(Double gene3) {
+        this.gene3 = gene3;
+    }
+
+    public Double getGene4() {
+        return gene4;
+    }
+
+    public Person gene4(Double gene4) {
+        this.gene4 = gene4;
+        return this;
+    }
+
+    public void setGene4(Double gene4) {
+        this.gene4 = gene4;
+    }
+
+    public Double getGene5() {
+        return gene5;
+    }
+
+    public Person gene5(Double gene5) {
+        this.gene5 = gene5;
+        return this;
+    }
+
+    public void setGene5(Double gene5) {
+        this.gene5 = gene5;
+    }
+
+    public Double getGene6() {
+        return gene6;
+    }
+
+    public Person gene6(Double gene6) {
+        this.gene6 = gene6;
+        return this;
+    }
+
+    public void setGene6(Double gene6) {
+        this.gene6 = gene6;
     }
 
     public Double getGeneration() {
@@ -236,7 +364,15 @@ public class Person implements Serializable {
             ", surname='" + surname + "'" +
             ", name='" + name + "'" +
             ", fatherName='" + fatherName + "'" +
+            ", motherName='" + motherName + "'" +
+            ", gender='" + gender + "'" +
             ", age='" + age + "'" +
+            ", gene1='" + gene1 + "'" +
+            ", gene2='" + gene2 + "'" +
+            ", gene3='" + gene3 + "'" +
+            ", gene4='" + gene4 + "'" +
+            ", gene5='" + gene5 + "'" +
+            ", gene6='" + gene6 + "'" +
             ", generation='" + generation + "'" +
             ", value='" + value + "'" +
             ", lastValue='" + lastValue + "'" +

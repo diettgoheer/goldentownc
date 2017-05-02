@@ -64,7 +64,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="world_age" type="double">
+            <column name="one_age" type="double">
                 <constraints nullable="true" />
             </column>
             
@@ -85,6 +85,14 @@
             </column>
             
             <column name="breed_rate" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="world_count" type="double">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="world_age" type="double">
                 <constraints nullable="true" />
             </column>
             

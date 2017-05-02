@@ -25,52 +25,58 @@ public class World implements Serializable {
     private Long id;
 
     @Column(name = "time")
-    private ZonedDateTime time;
+    private ZonedDateTime time = ZonedDateTime.now();
 
     @Column(name = "person_count")
-    private Double personCount;
+    private Double personCount=(double)0;
 
     @Column(name = "birth_count")
-    private Double birthCount;
+    private Double birthCount=(double)0;
 
     @Column(name = "death_count")
-    private Double deathCount;
+    private Double deathCount=(double)0;
 
     @Column(name = "max_generation")
-    private Double maxGeneration;
+    private Double maxGeneration=(double)0;
 
     @Column(name = "average_value")
-    private Double averageValue;
+    private Double averageValue=(double)0;
 
     @Column(name = "average_age")
-    private Double averageAge;
+    private Double averageAge=(double)0;
 
     @Column(name = "max_value")
-    private Double maxValue;
+    private Double maxValue=(double)0;
 
     @Column(name = "max_age")
-    private Double maxAge;
+    private Double maxAge=(double)0;
 
     @Column(name = "world_value")
-    private Double worldValue;
+    private Double worldValue=(double)0;
 
-    @Column(name = "world_age")
-    private Double worldAge;
+    @Column(name = "one_age")
+    private Double oneAge=(double)0;
 
     @Column(name = "mid_age")
-    private Double midAge;
+    private Double midAge=(double)0;
 
     @Column(name = "base_value")
-    private Double baseValue;
+    private Double baseValue=(double)0;
 
     @Column(name = "grow_rate")
-    private Double growRate;
+    private Double growRate=(double)0;
 
     @Column(name = "legacy_rate")
-    private Double legacyRate;
+    private Double legacyRate=(double)0;
 
     @Column(name = "breed_rate")
-    private Double breedRate;
+    private Double breedRate=(double)0;
+
+    @Column(name = "world_count")
+    private Double worldCount=(double)0;
+
+    @Column(name = "world_age")
+    private Double worldAge=(double)0;
 
     public Long getId() {
         return id;
@@ -210,17 +216,17 @@ public class World implements Serializable {
         this.worldValue = worldValue;
     }
 
-    public Double getWorldAge() {
-        return worldAge;
+    public Double getOneAge() {
+        return oneAge;
     }
 
-    public World worldAge(Double worldAge) {
-        this.worldAge = worldAge;
+    public World oneAge(Double oneAge) {
+        this.oneAge = oneAge;
         return this;
     }
 
-    public void setWorldAge(Double worldAge) {
-        this.worldAge = worldAge;
+    public void setOneAge(Double oneAge) {
+        this.oneAge = oneAge;
     }
 
     public Double getMidAge() {
@@ -288,6 +294,32 @@ public class World implements Serializable {
         this.breedRate = breedRate;
     }
 
+    public Double getWorldCount() {
+        return worldCount;
+    }
+
+    public World worldCount(Double worldCount) {
+        this.worldCount = worldCount;
+        return this;
+    }
+
+    public void setWorldCount(Double worldCount) {
+        this.worldCount = worldCount;
+    }
+
+    public Double getWorldAge() {
+        return worldAge;
+    }
+
+    public World worldAge(Double worldAge) {
+        this.worldAge = worldAge;
+        return this;
+    }
+
+    public void setWorldAge(Double worldAge) {
+        this.worldAge = worldAge;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -322,12 +354,14 @@ public class World implements Serializable {
             ", maxValue='" + maxValue + "'" +
             ", maxAge='" + maxAge + "'" +
             ", worldValue='" + worldValue + "'" +
-            ", worldAge='" + worldAge + "'" +
+            ", oneAge='" + oneAge + "'" +
             ", midAge='" + midAge + "'" +
             ", baseValue='" + baseValue + "'" +
             ", growRate='" + growRate + "'" +
             ", legacyRate='" + legacyRate + "'" +
             ", breedRate='" + breedRate + "'" +
+            ", worldCount='" + worldCount + "'" +
+            ", worldAge='" + worldAge + "'" +
             '}';
     }
 }

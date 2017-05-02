@@ -19,11 +19,43 @@
             "fieldName": "fatherName",
             "fieldType": "String"
         },
+	    {
+            "fieldName": "motherName",
+            "fieldType": "String"
+        },
+		{
+            "fieldName": "gender",
+            "fieldType": "Integer"
+        },
         {
             "fieldName": "age",
             "fieldType": "Double"
         },
 		{
+            "fieldName": "gene1",
+            "fieldType": "Double"
+        },
+	    {
+            "fieldName": "gene2",
+            "fieldType": "Double"
+        },
+	    {
+            "fieldName": "gene3",
+            "fieldType": "Double"
+        },
+				{
+            "fieldName": "gene4",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "gene5",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "gene6",
+            "fieldType": "Double"
+        },
+				{
             "fieldName": "generation",
             "fieldType": "Double"
         },

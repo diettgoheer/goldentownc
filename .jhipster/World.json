@@ -43,7 +43,7 @@
             "fieldType": "Double"
         },
         {
-            "fieldName": "worldAge",
+            "fieldName": "oneAge",
             "fieldType": "Double"
         },
         {
@@ -64,6 +64,14 @@
         },
         {
             "fieldName": "breedRate",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "worldCount",
+            "fieldType": "Double"
+        },
+		{
+            "fieldName": "worldAge",
             "fieldType": "Double"
         }
     ],

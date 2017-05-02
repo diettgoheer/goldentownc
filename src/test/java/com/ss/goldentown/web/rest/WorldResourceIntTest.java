@@ -74,8 +74,8 @@ public class WorldResourceIntTest {
     private static final Double DEFAULT_WORLD_VALUE = 1D;
     private static final Double UPDATED_WORLD_VALUE = 2D;
 
-    private static final Double DEFAULT_WORLD_AGE = 1D;
-    private static final Double UPDATED_WORLD_AGE = 2D;
+    private static final Double DEFAULT_ONE_AGE = 1D;
+    private static final Double UPDATED_ONE_AGE = 2D;
 
     private static final Double DEFAULT_MID_AGE = 1D;
     private static final Double UPDATED_MID_AGE = 2D;
@@ -91,6 +91,12 @@ public class WorldResourceIntTest {
 
     private static final Double DEFAULT_BREED_RATE = 1D;
     private static final Double UPDATED_BREED_RATE = 2D;
+
+    private static final Double DEFAULT_WORLD_COUNT = 1D;
+    private static final Double UPDATED_WORLD_COUNT = 2D;
+
+    private static final Double DEFAULT_WORLD_AGE = 1D;
+    private static final Double UPDATED_WORLD_AGE = 2D;
 
     @Inject
     private WorldRepository worldRepository;
@@ -142,12 +148,14 @@ public class WorldResourceIntTest {
                 .maxValue(DEFAULT_MAX_VALUE)
                 .maxAge(DEFAULT_MAX_AGE)
                 .worldValue(DEFAULT_WORLD_VALUE)
-                .worldAge(DEFAULT_WORLD_AGE)
+                .oneAge(DEFAULT_ONE_AGE)
                 .midAge(DEFAULT_MID_AGE)
                 .baseValue(DEFAULT_BASE_VALUE)
                 .growRate(DEFAULT_GROW_RATE)
                 .legacyRate(DEFAULT_LEGACY_RATE)
-                .breedRate(DEFAULT_BREED_RATE);
+                .breedRate(DEFAULT_BREED_RATE)
+                .worldCount(DEFAULT_WORLD_COUNT)
+                .worldAge(DEFAULT_WORLD_AGE);
         return world;
     }
 
@@ -183,12 +191,14 @@ public class WorldResourceIntTest {
         assertThat(testWorld.getMaxValue()).isEqualTo(DEFAULT_MAX_VALUE);
         assertThat(testWorld.getMaxAge()).isEqualTo(DEFAULT_MAX_AGE);
         assertThat(testWorld.getWorldValue()).isEqualTo(DEFAULT_WORLD_VALUE);
-        assertThat(testWorld.getWorldAge()).isEqualTo(DEFAULT_WORLD_AGE);
+        assertThat(testWorld.getOneAge()).isEqualTo(DEFAULT_ONE_AGE);
         assertThat(testWorld.getMidAge()).isEqualTo(DEFAULT_MID_AGE);
         assertThat(testWorld.getBaseValue()).isEqualTo(DEFAULT_BASE_VALUE);
         assertThat(testWorld.getGrowRate()).isEqualTo(DEFAULT_GROW_RATE);
         assertThat(testWorld.getLegacyRate()).isEqualTo(DEFAULT_LEGACY_RATE);
         assertThat(testWorld.getBreedRate()).isEqualTo(DEFAULT_BREED_RATE);
+        assertThat(testWorld.getWorldCount()).isEqualTo(DEFAULT_WORLD_COUNT);
+        assertThat(testWorld.getWorldAge()).isEqualTo(DEFAULT_WORLD_AGE);
 
         // Validate the World in ElasticSearch
         World worldEs = worldSearchRepository.findOne(testWorld.getId());
@@ -236,12 +246,14 @@ public class WorldResourceIntTest {
             .andExpect(jsonPath("$.[*].maxValue").value(hasItem(DEFAULT_MAX_VALUE.doubleValue())))
             .andExpect(jsonPath("$.[*].maxAge").value(hasItem(DEFAULT_MAX_AGE.doubleValue())))
             .andExpect(jsonPath("$.[*].worldValue").value(hasItem(DEFAULT_WORLD_VALUE.doubleValue())))
-            .andExpect(jsonPath("$.[*].worldAge").value(hasItem(DEFAULT_WORLD_AGE.doubleValue())))
+            .andExpect(jsonPath("$.[*].oneAge").value(hasItem(DEFAULT_ONE_AGE.doubleValue())))
             .andExpect(jsonPath("$.[*].midAge").value(hasItem(DEFAULT_MID_AGE.doubleValue())))
             .andExpect(jsonPath("$.[*].baseValue").value(hasItem(DEFAULT_BASE_VALUE.doubleValue())))
             .andExpect(jsonPath("$.[*].growRate").value(hasItem(DEFAULT_GROW_RATE.doubleValue())))
             .andExpect(jsonPath("$.[*].legacyRate").value(hasItem(DEFAULT_LEGACY_RATE.doubleValue())))
-            .andExpect(jsonPath("$.[*].breedRate").value(hasItem(DEFAULT_BREED_RATE.doubleValue())));
+            .andExpect(jsonPath("$.[*].breedRate").value(hasItem(DEFAULT_BREED_RATE.doubleValue())))
+            .andExpect(jsonPath("$.[*].worldCount").value(hasItem(DEFAULT_WORLD_COUNT.doubleValue())))
+            .andExpect(jsonPath("$.[*].worldAge").value(hasItem(DEFAULT_WORLD_AGE.doubleValue())));
     }
 
     @Test
@@ -265,12 +277,14 @@ public class WorldResourceIntTest {
             .andExpect(jsonPath("$.maxValue").value(DEFAULT_MAX_VALUE.doubleValue()))
             .andExpect(jsonPath("$.maxAge").value(DEFAULT_MAX_AGE.doubleValue()))
             .andExpect(jsonPath("$.worldValue").value(DEFAULT_WORLD_VALUE.doubleValue()))
-            .andExpect(jsonPath("$.worldAge").value(DEFAULT_WORLD_AGE.doubleValue()))
+            .andExpect(jsonPath("$.oneAge").value(DEFAULT_ONE_AGE.doubleValue()))
             .andExpect(jsonPath("$.midAge").value(DEFAULT_MID_AGE.doubleValue()))
             .andExpect(jsonPath("$.baseValue").value(DEFAULT_BASE_VALUE.doubleValue()))
             .andExpect(jsonPath("$.growRate").value(DEFAULT_GROW_RATE.doubleValue()))
             .andExpect(jsonPath("$.legacyRate").value(DEFAULT_LEGACY_RATE.doubleValue()))
-            .andExpect(jsonPath("$.breedRate").value(DEFAULT_BREED_RATE.doubleValue()));
+            .andExpect(jsonPath("$.breedRate").value(DEFAULT_BREED_RATE.doubleValue()))
+            .andExpect(jsonPath("$.worldCount").value(DEFAULT_WORLD_COUNT.doubleValue()))
+            .andExpect(jsonPath("$.worldAge").value(DEFAULT_WORLD_AGE.doubleValue()));
     }
 
     @Test
@@ -302,12 +316,14 @@ public class WorldResourceIntTest {
                 .maxValue(UPDATED_MAX_VALUE)
                 .maxAge(UPDATED_MAX_AGE)
                 .worldValue(UPDATED_WORLD_VALUE)
-                .worldAge(UPDATED_WORLD_AGE)
+                .oneAge(UPDATED_ONE_AGE)
                 .midAge(UPDATED_MID_AGE)
                 .baseValue(UPDATED_BASE_VALUE)
                 .growRate(UPDATED_GROW_RATE)
                 .legacyRate(UPDATED_LEGACY_RATE)
-                .breedRate(UPDATED_BREED_RATE);
+                .breedRate(UPDATED_BREED_RATE)
+                .worldCount(UPDATED_WORLD_COUNT)
+                .worldAge(UPDATED_WORLD_AGE);
 
         restWorldMockMvc.perform(put("/api/worlds")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -328,12 +344,14 @@ public class WorldResourceIntTest {
         assertThat(testWorld.getMaxValue()).isEqualTo(UPDATED_MAX_VALUE);
         assertThat(testWorld.getMaxAge()).isEqualTo(UPDATED_MAX_AGE);
         assertThat(testWorld.getWorldValue()).isEqualTo(UPDATED_WORLD_VALUE);
-        assertThat(testWorld.getWorldAge()).isEqualTo(UPDATED_WORLD_AGE);
+        assertThat(testWorld.getOneAge()).isEqualTo(UPDATED_ONE_AGE);
         assertThat(testWorld.getMidAge()).isEqualTo(UPDATED_MID_AGE);
         assertThat(testWorld.getBaseValue()).isEqualTo(UPDATED_BASE_VALUE);
         assertThat(testWorld.getGrowRate()).isEqualTo(UPDATED_GROW_RATE);
         assertThat(testWorld.getLegacyRate()).isEqualTo(UPDATED_LEGACY_RATE);
         assertThat(testWorld.getBreedRate()).isEqualTo(UPDATED_BREED_RATE);
+        assertThat(testWorld.getWorldCount()).isEqualTo(UPDATED_WORLD_COUNT);
+        assertThat(testWorld.getWorldAge()).isEqualTo(UPDATED_WORLD_AGE);
 
         // Validate the World in ElasticSearch
         World worldEs = worldSearchRepository.findOne(testWorld.getId());
@@ -401,11 +419,13 @@ public class WorldResourceIntTest {
             .andExpect(jsonPath("$.[*].maxValue").value(hasItem(DEFAULT_MAX_VALUE.doubleValue())))
             .andExpect(jsonPath("$.[*].maxAge").value(hasItem(DEFAULT_MAX_AGE.doubleValue())))
             .andExpect(jsonPath("$.[*].worldValue").value(hasItem(DEFAULT_WORLD_VALUE.doubleValue())))
-            .andExpect(jsonPath("$.[*].worldAge").value(hasItem(DEFAULT_WORLD_AGE.doubleValue())))
+            .andExpect(jsonPath("$.[*].oneAge").value(hasItem(DEFAULT_ONE_AGE.doubleValue())))
             .andExpect(jsonPath("$.[*].midAge").value(hasItem(DEFAULT_MID_AGE.doubleValue())))
             .andExpect(jsonPath("$.[*].baseValue").value(hasItem(DEFAULT_BASE_VALUE.doubleValue())))
             .andExpect(jsonPath("$.[*].growRate").value(hasItem(DEFAULT_GROW_RATE.doubleValue())))
             .andExpect(jsonPath("$.[*].legacyRate").value(hasItem(DEFAULT_LEGACY_RATE.doubleValue())))
-            .andExpect(jsonPath("$.[*].breedRate").value(hasItem(DEFAULT_BREED_RATE.doubleValue())));
+            .andExpect(jsonPath("$.[*].breedRate").value(hasItem(DEFAULT_BREED_RATE.doubleValue())))
+            .andExpect(jsonPath("$.[*].worldCount").value(hasItem(DEFAULT_WORLD_COUNT.doubleValue())))
+            .andExpect(jsonPath("$.[*].worldAge").value(hasItem(DEFAULT_WORLD_AGE.doubleValue())));
     }
 }

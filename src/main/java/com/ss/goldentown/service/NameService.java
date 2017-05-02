@@ -33,12 +33,15 @@ public class NameService {
 	}
 	
 	public static String getSurname(String surname){
-		double n = 0.1;
+		double n = 0.02;
 		String str;
-		if(Math.random()>n)
+		double p = Math.random();
+		if(p>n)
 			str = surname;
-		else
+		else if(p<n/10)
 			str = NameService.getFixedLengthChinese("", 2);
+		else
+			str = surname + NameService.getFixedLengthChinese("", 2);
 		return str;
 	} 
 	

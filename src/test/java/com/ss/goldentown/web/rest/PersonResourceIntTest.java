@@ -56,8 +56,32 @@ public class PersonResourceIntTest {
     private static final String DEFAULT_FATHER_NAME = "AAAAAAAAAA";
     private static final String UPDATED_FATHER_NAME = "BBBBBBBBBB";
 
+    private static final String DEFAULT_MOTHER_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_MOTHER_NAME = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_GENDER = 1;
+    private static final Integer UPDATED_GENDER = 2;
+
     private static final Double DEFAULT_AGE = 1D;
     private static final Double UPDATED_AGE = 2D;
+
+    private static final Double DEFAULT_GENE_1 = 1D;
+    private static final Double UPDATED_GENE_1 = 2D;
+
+    private static final Double DEFAULT_GENE_2 = 1D;
+    private static final Double UPDATED_GENE_2 = 2D;
+
+    private static final Double DEFAULT_GENE_3 = 1D;
+    private static final Double UPDATED_GENE_3 = 2D;
+
+    private static final Double DEFAULT_GENE_4 = 1D;
+    private static final Double UPDATED_GENE_4 = 2D;
+
+    private static final Double DEFAULT_GENE_5 = 1D;
+    private static final Double UPDATED_GENE_5 = 2D;
+
+    private static final Double DEFAULT_GENE_6 = 1D;
+    private static final Double UPDATED_GENE_6 = 2D;
 
     private static final Double DEFAULT_GENERATION = 1D;
     private static final Double UPDATED_GENERATION = 2D;
@@ -121,7 +145,15 @@ public class PersonResourceIntTest {
                 .surname(DEFAULT_SURNAME)
                 .name(DEFAULT_NAME)
                 .fatherName(DEFAULT_FATHER_NAME)
+                .motherName(DEFAULT_MOTHER_NAME)
+                .gender(DEFAULT_GENDER)
                 .age(DEFAULT_AGE)
+                .gene1(DEFAULT_GENE_1)
+                .gene2(DEFAULT_GENE_2)
+                .gene3(DEFAULT_GENE_3)
+                .gene4(DEFAULT_GENE_4)
+                .gene5(DEFAULT_GENE_5)
+                .gene6(DEFAULT_GENE_6)
                 .generation(DEFAULT_GENERATION)
                 .value(DEFAULT_VALUE)
                 .lastValue(DEFAULT_LAST_VALUE)
@@ -157,7 +189,15 @@ public class PersonResourceIntTest {
         assertThat(testPerson.getSurname()).isEqualTo(DEFAULT_SURNAME);
         assertThat(testPerson.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testPerson.getFatherName()).isEqualTo(DEFAULT_FATHER_NAME);
+        assertThat(testPerson.getMotherName()).isEqualTo(DEFAULT_MOTHER_NAME);
+        assertThat(testPerson.getGender()).isEqualTo(DEFAULT_GENDER);
         assertThat(testPerson.getAge()).isEqualTo(DEFAULT_AGE);
+        assertThat(testPerson.getGene1()).isEqualTo(DEFAULT_GENE_1);
+        assertThat(testPerson.getGene2()).isEqualTo(DEFAULT_GENE_2);
+        assertThat(testPerson.getGene3()).isEqualTo(DEFAULT_GENE_3);
+        assertThat(testPerson.getGene4()).isEqualTo(DEFAULT_GENE_4);
+        assertThat(testPerson.getGene5()).isEqualTo(DEFAULT_GENE_5);
+        assertThat(testPerson.getGene6()).isEqualTo(DEFAULT_GENE_6);
         assertThat(testPerson.getGeneration()).isEqualTo(DEFAULT_GENERATION);
         assertThat(testPerson.getValue()).isEqualTo(DEFAULT_VALUE);
         assertThat(testPerson.getLastValue()).isEqualTo(DEFAULT_LAST_VALUE);
@@ -205,7 +245,15 @@ public class PersonResourceIntTest {
             .andExpect(jsonPath("$.[*].surname").value(hasItem(DEFAULT_SURNAME.toString())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].fatherName").value(hasItem(DEFAULT_FATHER_NAME.toString())))
+            .andExpect(jsonPath("$.[*].motherName").value(hasItem(DEFAULT_MOTHER_NAME.toString())))
+            .andExpect(jsonPath("$.[*].gender").value(hasItem(DEFAULT_GENDER)))
             .andExpect(jsonPath("$.[*].age").value(hasItem(DEFAULT_AGE.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene1").value(hasItem(DEFAULT_GENE_1.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene2").value(hasItem(DEFAULT_GENE_2.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene3").value(hasItem(DEFAULT_GENE_3.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene4").value(hasItem(DEFAULT_GENE_4.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene5").value(hasItem(DEFAULT_GENE_5.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene6").value(hasItem(DEFAULT_GENE_6.doubleValue())))
             .andExpect(jsonPath("$.[*].generation").value(hasItem(DEFAULT_GENERATION.doubleValue())))
             .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE.doubleValue())))
             .andExpect(jsonPath("$.[*].lastValue").value(hasItem(DEFAULT_LAST_VALUE.doubleValue())))
@@ -229,7 +277,15 @@ public class PersonResourceIntTest {
             .andExpect(jsonPath("$.surname").value(DEFAULT_SURNAME.toString()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.fatherName").value(DEFAULT_FATHER_NAME.toString()))
+            .andExpect(jsonPath("$.motherName").value(DEFAULT_MOTHER_NAME.toString()))
+            .andExpect(jsonPath("$.gender").value(DEFAULT_GENDER))
             .andExpect(jsonPath("$.age").value(DEFAULT_AGE.doubleValue()))
+            .andExpect(jsonPath("$.gene1").value(DEFAULT_GENE_1.doubleValue()))
+            .andExpect(jsonPath("$.gene2").value(DEFAULT_GENE_2.doubleValue()))
+            .andExpect(jsonPath("$.gene3").value(DEFAULT_GENE_3.doubleValue()))
+            .andExpect(jsonPath("$.gene4").value(DEFAULT_GENE_4.doubleValue()))
+            .andExpect(jsonPath("$.gene5").value(DEFAULT_GENE_5.doubleValue()))
+            .andExpect(jsonPath("$.gene6").value(DEFAULT_GENE_6.doubleValue()))
             .andExpect(jsonPath("$.generation").value(DEFAULT_GENERATION.doubleValue()))
             .andExpect(jsonPath("$.value").value(DEFAULT_VALUE.doubleValue()))
             .andExpect(jsonPath("$.lastValue").value(DEFAULT_LAST_VALUE.doubleValue()))
@@ -261,7 +317,15 @@ public class PersonResourceIntTest {
                 .surname(UPDATED_SURNAME)
                 .name(UPDATED_NAME)
                 .fatherName(UPDATED_FATHER_NAME)
+                .motherName(UPDATED_MOTHER_NAME)
+                .gender(UPDATED_GENDER)
                 .age(UPDATED_AGE)
+                .gene1(UPDATED_GENE_1)
+                .gene2(UPDATED_GENE_2)
+                .gene3(UPDATED_GENE_3)
+                .gene4(UPDATED_GENE_4)
+                .gene5(UPDATED_GENE_5)
+                .gene6(UPDATED_GENE_6)
                 .generation(UPDATED_GENERATION)
                 .value(UPDATED_VALUE)
                 .lastValue(UPDATED_LAST_VALUE)
@@ -282,7 +346,15 @@ public class PersonResourceIntTest {
         assertThat(testPerson.getSurname()).isEqualTo(UPDATED_SURNAME);
         assertThat(testPerson.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testPerson.getFatherName()).isEqualTo(UPDATED_FATHER_NAME);
+        assertThat(testPerson.getMotherName()).isEqualTo(UPDATED_MOTHER_NAME);
+        assertThat(testPerson.getGender()).isEqualTo(UPDATED_GENDER);
         assertThat(testPerson.getAge()).isEqualTo(UPDATED_AGE);
+        assertThat(testPerson.getGene1()).isEqualTo(UPDATED_GENE_1);
+        assertThat(testPerson.getGene2()).isEqualTo(UPDATED_GENE_2);
+        assertThat(testPerson.getGene3()).isEqualTo(UPDATED_GENE_3);
+        assertThat(testPerson.getGene4()).isEqualTo(UPDATED_GENE_4);
+        assertThat(testPerson.getGene5()).isEqualTo(UPDATED_GENE_5);
+        assertThat(testPerson.getGene6()).isEqualTo(UPDATED_GENE_6);
         assertThat(testPerson.getGeneration()).isEqualTo(UPDATED_GENERATION);
         assertThat(testPerson.getValue()).isEqualTo(UPDATED_VALUE);
         assertThat(testPerson.getLastValue()).isEqualTo(UPDATED_LAST_VALUE);
@@ -350,7 +422,15 @@ public class PersonResourceIntTest {
             .andExpect(jsonPath("$.[*].surname").value(hasItem(DEFAULT_SURNAME.toString())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].fatherName").value(hasItem(DEFAULT_FATHER_NAME.toString())))
+            .andExpect(jsonPath("$.[*].motherName").value(hasItem(DEFAULT_MOTHER_NAME.toString())))
+            .andExpect(jsonPath("$.[*].gender").value(hasItem(DEFAULT_GENDER)))
             .andExpect(jsonPath("$.[*].age").value(hasItem(DEFAULT_AGE.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene1").value(hasItem(DEFAULT_GENE_1.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene2").value(hasItem(DEFAULT_GENE_2.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene3").value(hasItem(DEFAULT_GENE_3.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene4").value(hasItem(DEFAULT_GENE_4.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene5").value(hasItem(DEFAULT_GENE_5.doubleValue())))
+            .andExpect(jsonPath("$.[*].gene6").value(hasItem(DEFAULT_GENE_6.doubleValue())))
             .andExpect(jsonPath("$.[*].generation").value(hasItem(DEFAULT_GENERATION.doubleValue())))
             .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE.doubleValue())))
             .andExpect(jsonPath("$.[*].lastValue").value(hasItem(DEFAULT_LAST_VALUE.doubleValue())))
